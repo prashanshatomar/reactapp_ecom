@@ -13,6 +13,26 @@ class Counter extends Component {
         <button>Increment</button>
       </div>
     ); //== React.createElement('div)
+    /**Sometimes we do not wnated to use extra div just to bind the html elements into single element,
+    In that case we use React.Fragment
+    Therefore we use
+    return (
+      <React.Fragment>
+        <h1>Hello World</h1>
+        <button>Increment</button>
+      </React.Fragment>
+    );
+    //in place of
+     
+    return (
+      <div>
+        <h1>Hello World</h1>
+        <button>Increment</button>
+      </div>
+    );  
+    
+    */
+
   }
 }
 
