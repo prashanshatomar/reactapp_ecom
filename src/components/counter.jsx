@@ -9,6 +9,7 @@ class Counter extends Component {
     fontWeight:'bold'
   }
   render() {
+    let classes = this.getBadgeClasses();
     // return <h1>Hello World</h1>;
     //return <h1>Hello World</h1><button>Increment</button>;
     //this will not work because babble not know how to deal with long multiple html element,
@@ -21,7 +22,9 @@ class Counter extends Component {
         <span>{this.state.count}</span> */}
         {/* <span style={{color:'red'}} className="badge badge-primary m-2">{this.formatCount()}</span> */}
 
-        <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
+        {/* <span style={this.styles} className={classes}>{this.formatCount()}</span> */}
+        <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+
         <button className="btn btn-secondary btn-sm">Increment</button>
       </div>
     ); //== React.createElement('div)    
@@ -46,6 +49,12 @@ class Counter extends Component {
    
 
   }
+  getBadgeClasses() {
+    let classes = 'badge m-2 badge-';
+    classes += this.state.count === 0 ? 'warning' : 'primary';
+    return classes;
+  }
+
   // formatCount() {
   //   return this.state.count === 0 ? 'Zero' : this.state.count;
   // }
