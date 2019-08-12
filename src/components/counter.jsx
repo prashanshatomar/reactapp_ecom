@@ -4,6 +4,10 @@ class Counter extends Component {
     count:0,
     imageUrl: 'https://picsum.photos/200'
   }
+  styles = {
+    fontSize:'15px',
+    fontWeight:'bold'
+  }
   render() {
     // return <h1>Hello World</h1>;
     //return <h1>Hello World</h1><button>Increment</button>;
@@ -12,12 +16,13 @@ class Counter extends Component {
 
     return (
       <div>
-        <h1>Hello World</h1>
-        <img src={this.state.imageUrl} alt = ""/>
-        <span>{this.state.count}</span>
-        <span>{this.formatCount()}</span>
+        {/* <h1>Hello World</h1>
+        {<img src={this.state.imageUrl} alt = ""/>
+        <span>{this.state.count}</span> */}
+        {/* <span style={{color:'red'}} className="badge badge-primary m-2">{this.formatCount()}</span> */}
 
-        <button>Increment</button>
+        <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
+        <button className="btn btn-secondary btn-sm">Increment</button>
       </div>
     ); //== React.createElement('div)    
     /**Sometimes we do not wnated to use extra div just to bind the html elements into single element,
