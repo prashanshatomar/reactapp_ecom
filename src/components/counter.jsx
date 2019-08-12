@@ -9,6 +9,10 @@ class Counter extends Component {
     fontSize:'15px',
     fontWeight:'bold'
   }
+  renderTags(){
+    if(this.state.tags.length ===0) return <p>There are no tags!</p>;
+    return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
+  }
   render() {
     let classes = this.getBadgeClasses();
     // return <h1>Hello World</h1>;
@@ -27,9 +31,11 @@ class Counter extends Component {
         <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
 
         <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
+        {/* <ul>
           {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
+        </ul> */}
+        {this.state.tags.length===0 && 'Please create a new tag!'}
+        {this.renderTags()}
       </div>
     ); //== React.createElement('div)    
     /**Sometimes we do not wnated to use extra div just to bind the html elements into single element,
