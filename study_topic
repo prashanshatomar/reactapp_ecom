@@ -3,3 +3,7 @@ setting classes dynamically
 rendering lists
 conditionaly rendering lists
 handling event
+
+Note:
+Fucntions in javascript are object so they have properties and methods
+such as bind method
